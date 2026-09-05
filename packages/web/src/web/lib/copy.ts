@@ -19,6 +19,14 @@ export const GALLERY = [
 
 export const LIGHTING_GALLERY = [
   {
+    src: "/images/lighting-05.png",
+    tag: { es: "Show en vivo", en: "Live show" },
+    caption: {
+      es: "LED mapping, cabina y operación en vivo — festival multidisciplinario",
+      en: "LED mapping, booth and live ops — multidisciplinary festival",
+    },
+  },
+  {
     src: "/images/lighting-01.png",
     tag: { es: "Stage / truss", en: "Stage / truss" },
     caption: { es: "Rig profesional: truss, moving heads y atmósfera en haz", en: "Pro rig: truss, moving heads and beam atmosphere" },
