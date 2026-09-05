@@ -17,6 +17,7 @@ export const GALLERY = [
   "/images/ferchx-03.jpg",
   "/images/ferchx-04.png",
   "/images/ferchx-05.png",
+  "/images/ferchx-06.jpg",
 ] as const;
 
 export const LIGHTING_GALLERY = [
