@@ -7,7 +7,7 @@ import type { Logger, Plugin, ResolvedConfig } from "vite";
 
 // Optimizes the static assets Vite copied verbatim from public/ into the build
 // output. Runs only on the dist copies at closeBundle — files in public/ are
-// never mutated. Tuned for a resource-constrained sandbox: files are processed
+// never mutated. Files are processed
 // strictly sequentially, sharp runs with concurrency 1, ffmpeg is capped at two
 // threads, and results are cached in node_modules/.cache keyed by content hash
 // so rebuilds skip work already done. A failure on one file never fails the
@@ -162,7 +162,7 @@ async function optimizeVideo(
   if (await applyCached(file, cached, skipMarker)) return;
 
   // Transcode to a temp file in the cache dir — never in place. Threads and
-  // preset are capped to keep CPU usage modest in the sandbox.
+  // preset are capped to keep CPU usage modest.
   const tmp = path.join(cacheDir, `${key}.tmp${ext}`);
   try {
     await execFileAsync("ffmpeg", [

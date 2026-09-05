@@ -4,7 +4,7 @@ import { os, type Router } from "@orpc/server";
 import { RPCHandler } from "@orpc/server/fetch";
 
 /**
- * TEMPLATE-MANAGED (__ prefix) — do not edit. Feature procedures belong in
+ * Feature procedures belong in
  * src/api/routes/, composed in src/api/index.ts.
  *
  * oRPC is the API layer: define procedures on the `router` in src/api/index.ts;
