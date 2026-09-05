@@ -87,13 +87,69 @@ export const GEAR = [
  */
 export const VIDEOS = [
   {
-    id: "ig-profile",
-    title: { es: "Historias & Reels", en: "Highlights & Reels" },
-    href: "https://www.instagram.com/ferchx_bhdp/",
-    kind: "instagram" as const,
+    id: "reel-daqf5",
+    title: { es: "Set en vivo", en: "Live set" },
+    href: "https://www.instagram.com/ferchx_bhdp/reel/Daqf5OJJRrY/",
+    embed: "https://www.instagram.com/reel/Daqf5OJJRrY/embed",
+    kind: "reel" as const,
     note: {
-      es: "Sets en vivo, cabina y aftermovies en @ferchx_bhdp",
-      en: "Live sets, booth cuts and aftermovies on @ferchx_bhdp",
+      es: "Reel de FerchX en cabina — @ferchx_bhdp",
+      en: "FerchX booth reel — @ferchx_bhdp",
+    },
+  },
+  {
+    id: "reel-dx2x",
+    title: { es: "Cabina / night", en: "Booth / night" },
+    href: "https://www.instagram.com/ferchx_bhdp/reel/DX2X4DJJZoc/",
+    embed: "https://www.instagram.com/reel/DX2X4DJJZoc/embed",
+    kind: "reel" as const,
+    note: {
+      es: "Corte de noche desde Instagram",
+      en: "Night cut from Instagram",
+    },
+  },
+  {
+    id: "reel-dwm",
+    title: { es: "Live cut", en: "Live cut" },
+    href: "https://www.instagram.com/ferchx_bhdp/reel/DW_MhorDgb2/",
+    embed: "https://www.instagram.com/reel/DW_MhorDgb2/embed",
+    kind: "reel" as const,
+    note: {
+      es: "Reel en vivo de FerchX",
+      en: "FerchX live reel",
+    },
+  },
+  {
+    id: "reel-drtj",
+    title: { es: "After / floor", en: "After / floor" },
+    href: "https://www.instagram.com/ferchx_bhdp/reel/DRtjXucDkjM/",
+    embed: "https://www.instagram.com/reel/DRtjXucDkjM/embed",
+    kind: "reel" as const,
+    note: {
+      es: "Momento de pista y energía",
+      en: "Floor energy cut",
+    },
+  },
+  {
+    id: "reel-drsq",
+    title: { es: "DJ FerchX", en: "DJ FerchX" },
+    href: "https://www.instagram.com/ferchx_bhdp/reel/DRsqOCoibOw/",
+    embed: "https://www.instagram.com/reel/DRsqOCoibOw/embed",
+    kind: "reel" as const,
+    note: {
+      es: "Reel de performance",
+      en: "Performance reel",
+    },
+  },
+  {
+    id: "highlights",
+    title: { es: "Historias destacadas", en: "Story highlights" },
+    href: "https://www.instagram.com/stories/highlights/18020925587237560/",
+    embed: null,
+    kind: "highlight" as const,
+    note: {
+      es: "Highlight de historias en @ferchx_bhdp",
+      en: "Story highlight on @ferchx_bhdp",
     },
   },
 ] as const;
