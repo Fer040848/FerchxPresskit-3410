@@ -3,6 +3,7 @@ import { Nav } from "../components/site/nav";
 import { Hero } from "../components/site/hero";
 import { Sets } from "../components/site/sets";
 import { Bio } from "../components/site/bio";
+import { Lighting } from "../components/site/lighting";
 import { Gallery } from "../components/site/gallery";
 import { Videos } from "../components/site/videos";
 import { Rider } from "../components/site/rider";
@@ -18,6 +19,7 @@ function Index() {
           <Hero />
           <Sets />
           <Bio />
+          <Lighting />
           <Gallery />
           <Videos />
           <Rider />

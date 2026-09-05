@@ -17,6 +17,72 @@ export const GALLERY = [
   "/images/ferchx-03.jpg",
 ] as const;
 
+export const LIGHTING_GALLERY = [
+  {
+    src: "/images/lighting-01.jpg",
+    tag: { es: "LED Pixel", en: "LED Pixel" },
+    caption: { es: "Instalación LED pixel / mapping", en: "LED pixel / mapping install" },
+  },
+  {
+    src: "/images/lighting-02.jpg",
+    tag: { es: "Stage look", en: "Stage look" },
+    caption: { es: "Diseño de look para escenario", en: "Stage look design" },
+  },
+  {
+    src: "/images/lighting-03.jpg",
+    tag: { es: "Interactive", en: "Interactive" },
+    caption: { es: "Luces interactivas y atmósfera", en: "Interactive lights & atmosphere" },
+  },
+] as const;
+
+export const LIGHTING_EXPERTISE = [
+  {
+    id: "light-design",
+    code: "01",
+    title: { es: "Light design", en: "Light design" },
+    detail: {
+      es: "Diseño de looks, pacing y narrativa lumínica para shows y festivales.",
+      en: "Look design, pacing and lighting narrative for shows and festivals.",
+    },
+  },
+  {
+    id: "engineering",
+    code: "02",
+    title: { es: "Ingeniería en iluminación", en: "Lighting engineering" },
+    detail: {
+      es: "Patch DMX, power distro, pixel mapping, fixtures y control en vivo.",
+      en: "DMX patch, power distro, pixel mapping, fixtures and live control.",
+    },
+  },
+  {
+    id: "stage",
+    code: "03",
+    title: { es: "Stage manager", en: "Stage manager" },
+    detail: {
+      es: "Coordinación de escenario, timings, backline y flujo del show.",
+      en: "Stage coordination, timings, backline and show flow.",
+    },
+  },
+  {
+    id: "repair",
+    code: "04",
+    title: { es: "Técnico en reparación", en: "Repair technician" },
+    detail: {
+      es: "Diagnóstico y reparación de fixtures, LED, controladores y cableado.",
+      en: "Diagnostics and repair of fixtures, LED, controllers and cabling.",
+    },
+  },
+  {
+    id: "business",
+    code: "05",
+    title: { es: "Music business", en: "Music business" },
+    detail: {
+      es: "Producción, riders, logística y puente entre talento, venue y crew.",
+      en: "Production, riders, logistics and the bridge between talent, venue and crew.",
+    },
+  },
+] as const;
+
 /** Equipment shown as visual cards in the rider */
 export const GEAR = [
   {
@@ -168,7 +234,9 @@ export const VIDEOS = [
 export const MARQUEE = [
   "TECH HOUSE",
   "MELODIC HOUSE",
+  "LIGHT DESIGN",
   "STAGE MANAGER",
+  "LED PIXEL",
   "LIGHT JOCKEY",
   "LASER VJ",
   "PRODUCTOR",
@@ -181,11 +249,21 @@ export type Copy = {
   nav: {
     sets: string;
     bio: string;
+    lighting: string;
     gallery: string;
     videos: string;
     rider: string;
     gear: string;
     booking: string;
+  };
+  lighting: Section & {
+    note: string;
+    years: string;
+    expertiseLabel: string;
+    galleryLabel: string;
+    galleryHint: string;
+    paragraphs: string[];
+    services: string[];
   };
   hero: {
     tag: string;
@@ -223,6 +301,7 @@ const es: Copy = {
   nav: {
     sets: "Sets",
     bio: "Bio",
+    lighting: "Luces",
     gallery: "Galería",
     videos: "Videos",
     rider: "Rider",
@@ -254,20 +333,39 @@ const es: Copy = {
     copyBtn: "Copiar esta bio",
     copied: "Copiada ✓",
   },
+  lighting: {
+    kicker: "03 — Escenario & luz",
+    title: "Light design",
+    note: "Iluminador y light designer para shows y festivales multidisciplinarios.",
+    years: "+10 años en escenario, luz y producción.",
+    expertiseLabel: "Expertise",
+    galleryLabel: "04 — Instalaciones",
+    galleryHint: "LED pixel · mapping · looks en vivo",
+    paragraphs: [
+      "Además de la cabina, FerchX trabaja la noche desde la ingeniería de iluminación: LED pixel, fixtures, control DMX, looks interactivos y la lectura del espacio. Diseña atmósfera con la misma precisión con la que construye un set.",
+      "Más de una década como stage manager, light jockey, técnico de reparación y puente de music business: del rider al power distro, del ensayo al cue final. Perfil listo para festivales, marcas y producciones que necesitan un experto que entiende talento, crew y venue.",
+      "Presenta propuestas dignas de escenario grande — instalación, operación en vivo y soporte técnico — con criterio de ingeniería y sensibilidad de artista.",
+    ],
+    services: [
+      "Diseño e instalación LED / pixel mapping",
+      "Operación en vivo · light jockey · laser VJ",
+      "Stage management y coordinación técnica",
+    ],
+  },
   gallery: {
-    kicker: "03 — Archivo",
+    kicker: "05 — Archivo",
     title: "Galería",
     note: "Clic en cualquier foto para verla completa.",
     download: "Descargar",
   },
   videos: {
-    kicker: "04 — En vivo",
+    kicker: "06 — En vivo",
     title: "Videos",
     note: "Cabina, sets y cortes desde Instagram.",
     openIg: "Ver en Instagram",
   },
   rider: {
-    kicker: "05 — Requerimientos",
+    kicker: "07 — Requerimientos",
     title: "Rider técnico",
     note: "Equipo estándar. Todo es adaptable al venue.",
     gearTitle: "Equipo en cabina",
@@ -292,7 +390,7 @@ const es: Copy = {
     flexible: "¿Tu venue tiene otro setup? Escríbeme y lo resolvemos.",
   },
   gear: {
-    kicker: "06 — Si el venue no tiene equipo",
+    kicker: "08 — Si el venue no tiene equipo",
     title: "Renta de equipo",
     note: "Nodo DJ Gear arma el setup completo para tu evento: CDJs, mixer, monitoreo y soporte técnico.",
     cta: "Cotizar en Nodo DJ Gear",
@@ -305,7 +403,7 @@ const es: Copy = {
     ],
   },
   booking: {
-    kicker: "07 — Contacto",
+    kicker: "09 — Contacto",
     title: "Booking",
     line: "Fechas, festivales, producción de escenario y show de luces.",
     whatsapp: "WhatsApp",
@@ -322,6 +420,7 @@ const en: Copy = {
   nav: {
     sets: "Sets",
     bio: "Bio",
+    lighting: "Lights",
     gallery: "Gallery",
     videos: "Videos",
     rider: "Rider",
@@ -353,20 +452,39 @@ const en: Copy = {
     copyBtn: "Copy this bio",
     copied: "Copied ✓",
   },
+  lighting: {
+    kicker: "03 — Stage & light",
+    title: "Light design",
+    note: "Lighting designer for multidisciplinary shows and festivals.",
+    years: "10+ years on stage, light and production.",
+    expertiseLabel: "Expertise",
+    galleryLabel: "04 — Installations",
+    galleryHint: "LED pixel · mapping · live looks",
+    paragraphs: [
+      "Beyond the booth, FerchX shapes the night through lighting engineering: LED pixel, fixtures, DMX control, interactive looks and reading the room. He designs atmosphere with the same precision he builds a set.",
+      "Over a decade as stage manager, light jockey, repair technician and music-business bridge: from rider to power distro, from rehearsal to final cue. A profile built for festivals, brands and productions that need someone who understands talent, crew and venue.",
+      "He delivers stage-ready proposals — install, live operation and technical support — with engineering rigor and an artist's eye.",
+    ],
+    services: [
+      "LED design & pixel-mapping installs",
+      "Live operation · light jockey · laser VJ",
+      "Stage management and technical coordination",
+    ],
+  },
   gallery: {
-    kicker: "03 — Archive",
+    kicker: "05 — Archive",
     title: "Gallery",
     note: "Click any photo to open it full size.",
     download: "Download",
   },
   videos: {
-    kicker: "04 — Live",
+    kicker: "06 — Live",
     title: "Videos",
     note: "Booth cuts and live sets from Instagram.",
     openIg: "Open on Instagram",
   },
   rider: {
-    kicker: "05 — Requirements",
+    kicker: "07 — Requirements",
     title: "Technical rider",
     note: "Standard gear. Everything can be adapted to the venue.",
     gearTitle: "Booth gear",
@@ -391,7 +509,7 @@ const en: Copy = {
     flexible: "Different setup at your venue? Message me and we'll work it out.",
   },
   gear: {
-    kicker: "06 — If the venue has no gear",
+    kicker: "08 — If the venue has no gear",
     title: "Equipment rental",
     note: "Nodo DJ Gear builds the full setup for your event: CDJs, mixer, monitoring and on-site support.",
     cta: "Get a Nodo DJ Gear quote",
@@ -404,7 +522,7 @@ const en: Copy = {
     ],
   },
   booking: {
-    kicker: "07 — Contact",
+    kicker: "09 — Contact",
     title: "Booking",
     line: "Dates, festivals, stage production and light shows.",
     whatsapp: "WhatsApp",
