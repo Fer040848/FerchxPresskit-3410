@@ -13,6 +13,7 @@ export default defineConfig(({ mode }) => {
   Object.assign(process.env, env);
 
   return {
+    base: process.env.GITHUB_PAGES === "true" ? "/FerchxPresskit-3410/" : "/",
     envDir: root,
     plugins: [
       honoDevPlugin(),

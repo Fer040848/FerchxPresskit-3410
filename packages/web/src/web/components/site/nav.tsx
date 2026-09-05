@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import { useLang } from "./lang-context";
 
-const SECTIONS = ["sets", "bio", "gallery", "rider", "booking"] as const;
+const SECTIONS = ["sets", "bio", "gallery", "videos", "rider", "gear", "booking"] as const;
 
 const ANCHORS: Record<(typeof SECTIONS)[number], string> = {
   sets: "#sets",
   bio: "#bio",
   gallery: "#galeria",
+  videos: "#videos",
   rider: "#rider",
+  gear: "#renta",
   booking: "#booking",
 };
 
@@ -37,7 +39,7 @@ export function Nav() {
           FERCHX
         </a>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-5 lg:flex xl:gap-7">
           {SECTIONS.map((key) => (
             <a
               key={key}
@@ -74,7 +76,7 @@ export function Nav() {
             type="button"
             aria-label="Menu"
             onClick={() => setOpen((v) => !v)}
-            className="flex h-8 w-8 flex-col items-center justify-center gap-[5px] md:hidden"
+            className="flex h-8 w-8 flex-col items-center justify-center gap-[5px] lg:hidden"
           >
             <span
               className={`block h-px w-5 bg-fg transition-transform ${open ? "translate-y-[3px] rotate-45" : ""}`}
@@ -87,7 +89,7 @@ export function Nav() {
       </div>
 
       {open && (
-        <nav className="flex flex-col gap-1 border-t border-line bg-bg px-5 py-5 md:hidden">
+        <nav className="flex flex-col gap-1 border-t border-line bg-bg px-5 py-5 lg:hidden">
           {SECTIONS.map((key) => (
             <a
               key={key}

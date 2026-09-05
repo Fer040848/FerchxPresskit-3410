@@ -8,12 +8,94 @@ export const LINKS = {
   instagram: "https://www.instagram.com/ferchx_bhdp",
   whatsapp: "https://wa.me/528445927862",
   phoneLabel: "+52 844 592 7862",
+  nodo: "https://nododjgear.com",
 } as const;
 
 export const GALLERY = [
   "/images/ferchx-01.jpg",
   "/images/ferchx-02.jpg",
   "/images/ferchx-03.jpg",
+] as const;
+
+/** Equipment shown as visual cards in the rider */
+export const GEAR = [
+  {
+    id: "cdj",
+    name: "Pioneer CDJ-3000 / 3000X",
+    qty: "2×",
+    role: { es: "Reproductores", en: "Players" },
+    detail: {
+      es: "Enlazados por LAN. Ideal: tercer CDJ en cabina.",
+      en: "Linked via LAN. Ideal: third CDJ in the booth.",
+    },
+  },
+  {
+    id: "mixer",
+    name: "Pioneer DJM-V10-LF",
+    qty: "1×",
+    role: { es: "Mezcladora", en: "Mixer" },
+    detail: {
+      es: "Preferida. Alternativas: DJM-A9 o DJM-900NXS2.",
+      en: "Preferred. Alternatives: DJM-A9 or DJM-900NXS2.",
+    },
+  },
+  {
+    id: "rmx",
+    name: "Pioneer RMX-1000",
+    qty: "1×",
+    role: { es: "Efectos", en: "Effects" },
+    detail: {
+      es: "En send/return de la mezcladora, si el venue lo permite.",
+      en: "On mixer send/return when the venue allows.",
+    },
+  },
+  {
+    id: "monitors",
+    name: "Monitores de cabina",
+    qty: "2×",
+    role: { es: "Monitoreo", en: "Monitoring" },
+    detail: {
+      es: "Con control de volumen independiente.",
+      en: "With independent volume control.",
+    },
+  },
+  {
+    id: "booth",
+    name: "Cabina / mesa",
+    qty: "—",
+    role: { es: "Espacio", en: "Booth" },
+    detail: {
+      es: "Mesa firme ~1.00 m alto, mínimo 2 m de ancho.",
+      en: "Solid table ~1.00 m high, 2 m wide minimum.",
+    },
+  },
+  {
+    id: "power",
+    name: "Energía + luces",
+    qty: "4×",
+    role: { es: "Infra", en: "Power" },
+    detail: {
+      es: "4 contactos aterrizados 110 V. Luz tenue; DMX si hay show.",
+      en: "4 grounded 110 V outlets. Dim light; DMX if light show.",
+    },
+  },
+] as const;
+
+/**
+ * Instagram / live videos. Reel URLs get filled as we confirm them from @ferchx_bhdp.
+ * Until then the UI still links out to Instagram highlights.
+ */
+export const VIDEOS = [
+  {
+    id: "ig-profile",
+    title: { es: "Historias & Reels", en: "Highlights & Reels" },
+    href: "https://www.instagram.com/ferchx_bhdp/",
+    kind: "instagram" as const,
+    note: {
+      es: "Sets en vivo, cabina y aftermovies en @ferchx_bhdp",
+      en: "Live sets, booth cuts and aftermovies on @ferchx_bhdp",
+    },
+  },
 ] as const;
 
 export const MARQUEE = [
@@ -29,7 +111,15 @@ export const MARQUEE = [
 type Section = { kicker: string; title: string };
 
 export type Copy = {
-  nav: { sets: string; bio: string; gallery: string; rider: string; booking: string };
+  nav: {
+    sets: string;
+    bio: string;
+    gallery: string;
+    videos: string;
+    rider: string;
+    gear: string;
+    booking: string;
+  };
   hero: {
     tag: string;
     genres: string;
@@ -40,10 +130,18 @@ export type Copy = {
   sets: Section & { note: string; platforms: string };
   bio: Section & { paragraphs: string[]; copyBtn: string; copied: string; roles: string[] };
   gallery: Section & { note: string; download: string };
+  videos: Section & { note: string; openIg: string };
   rider: Section & {
     note: string;
     rows: { label: string; value: string }[];
     flexible: string;
+    gearTitle: string;
+  };
+  gear: Section & {
+    note: string;
+    cta: string;
+    visit: string;
+    points: string[];
   };
   booking: Section & {
     line: string;
@@ -59,7 +157,9 @@ const es: Copy = {
     sets: "Sets",
     bio: "Bio",
     gallery: "Galería",
+    videos: "Videos",
     rider: "Rider",
+    gear: "Renta",
     booking: "Booking",
   },
   hero: {
@@ -93,10 +193,17 @@ const es: Copy = {
     note: "Clic en cualquier foto para verla completa.",
     download: "Descargar",
   },
+  videos: {
+    kicker: "04 — En vivo",
+    title: "Videos",
+    note: "Cabina, sets y cortes desde Instagram.",
+    openIg: "Ver en Instagram",
+  },
   rider: {
-    kicker: "04 — Requerimientos",
+    kicker: "05 — Requerimientos",
     title: "Rider técnico",
-    note: "Setup estándar. Todo es adaptable al venue.",
+    note: "Equipo estándar. Todo es adaptable al venue.",
+    gearTitle: "Equipo en cabina",
     rows: [
       { label: "Reproductores", value: "2× Pioneer CDJ-3000 o CDJ-3000X, enlazados por LAN" },
       {
@@ -117,8 +224,21 @@ const es: Copy = {
     ],
     flexible: "¿Tu venue tiene otro setup? Escríbeme y lo resolvemos.",
   },
+  gear: {
+    kicker: "06 — Si el venue no tiene equipo",
+    title: "Renta de equipo",
+    note: "Nodo DJ Gear arma el setup completo para tu evento: CDJs, mixer, monitoreo y soporte técnico.",
+    cta: "Cotizar en Nodo DJ Gear",
+    visit: "Abrir nododjgear.com",
+    points: [
+      "Renta profesional de CDJ, mezcladoras y monitoreo",
+      "Backliners y soporte en el venue",
+      "Planeación técnica a partir del rider de FerchX",
+      "Monterrey y norte de México",
+    ],
+  },
   booking: {
-    kicker: "05 — Contacto",
+    kicker: "07 — Contacto",
     title: "Booking",
     line: "Fechas, festivales, producción de escenario y show de luces.",
     whatsapp: "WhatsApp",
@@ -136,7 +256,9 @@ const en: Copy = {
     sets: "Sets",
     bio: "Bio",
     gallery: "Gallery",
+    videos: "Videos",
     rider: "Rider",
+    gear: "Rental",
     booking: "Booking",
   },
   hero: {
@@ -170,10 +292,17 @@ const en: Copy = {
     note: "Click any photo to open it full size.",
     download: "Download",
   },
+  videos: {
+    kicker: "04 — Live",
+    title: "Videos",
+    note: "Booth cuts and live sets from Instagram.",
+    openIg: "Open on Instagram",
+  },
   rider: {
-    kicker: "04 — Requirements",
+    kicker: "05 — Requirements",
     title: "Technical rider",
-    note: "Standard setup. Everything can be adapted to the venue.",
+    note: "Standard gear. Everything can be adapted to the venue.",
+    gearTitle: "Booth gear",
     rows: [
       { label: "Players", value: "2× Pioneer CDJ-3000 or CDJ-3000X, linked via LAN" },
       {
@@ -194,8 +323,21 @@ const en: Copy = {
     ],
     flexible: "Different setup at your venue? Message me and we'll work it out.",
   },
+  gear: {
+    kicker: "06 — If the venue has no gear",
+    title: "Equipment rental",
+    note: "Nodo DJ Gear builds the full setup for your event: CDJs, mixer, monitoring and on-site support.",
+    cta: "Get a Nodo DJ Gear quote",
+    visit: "Open nododjgear.com",
+    points: [
+      "Pro rental of CDJs, mixers and monitoring",
+      "Backliners and on-site support",
+      "Technical planning from FerchX's rider",
+      "Monterrey & northern Mexico",
+    ],
+  },
   booking: {
-    kicker: "05 — Contact",
+    kicker: "07 — Contact",
     title: "Booking",
     line: "Dates, festivals, stage production and light shows.",
     whatsapp: "WhatsApp",

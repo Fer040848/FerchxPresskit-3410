@@ -145,3 +145,67 @@
     animation: none;
   }
 }
+
+/* --- stronger motion --- */
+@keyframes float-slow {
+  0%, 100% { transform: scale(1.05) translate3d(0, 0, 0); }
+  50% { transform: scale(1.12) translate3d(-1.5%, 1%, 0); }
+}
+.hero-photo {
+  animation: float-slow 22s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes accent-pulse {
+  0%, 100% { opacity: 0.16; }
+  50% { opacity: 0.28; }
+}
+.hero-glow {
+  animation: accent-pulse 5s ease-in-out infinite;
+}
+
+@keyframes letter-in {
+  from { opacity: 0; transform: translateY(0.55em); }
+  to { opacity: 1; transform: none; }
+}
+.letter-rise {
+  display: inline-block;
+  opacity: 0;
+  animation: letter-in 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: var(--letter-delay, 0ms);
+}
+
+@keyframes card-pop {
+  from { opacity: 0; transform: translateY(28px) scale(0.97); }
+  to { opacity: 1; transform: none; }
+}
+.reveal-card.is-in {
+  animation: card-pop 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: var(--reveal-delay, 0ms);
+}
+.reveal-card {
+  opacity: 0;
+}
+
+@keyframes border-glow {
+  0%, 100% { border-color: rgba(0, 229, 140, 0.25); }
+  50% { border-color: rgba(0, 229, 140, 0.7); }
+}
+.gear-card:hover {
+  animation: border-glow 1.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-photo,
+  .hero-glow,
+  .letter-rise,
+  .reveal-card.is-in,
+  .gear-card:hover {
+    animation: none !important;
+  }
+  .letter-rise,
+  .reveal-card {
+    opacity: 1;
+    transform: none;
+  }
+}
