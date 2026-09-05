@@ -21,22 +21,22 @@ export const LIGHTING_GALLERY = [
   {
     src: "/images/lighting-01.png",
     tag: { es: "Stage / truss", en: "Stage / truss" },
-    caption: { es: "Iluminación de escenario y atmósfera de club", en: "Stage lighting and club atmosphere" },
+    caption: { es: "Rig profesional: truss, moving heads y atmósfera en haz", en: "Pro rig: truss, moving heads and beam atmosphere" },
   },
   {
     src: "/images/lighting-02.png",
     tag: { es: "Outdoor / festival", en: "Outdoor / festival" },
-    caption: { es: "Montaje outdoor — Barbol: fixtures, truss y look de escenario", en: "Outdoor build — Barbol: fixtures, truss and stage look" },
+    caption: { es: "Escenario outdoor con LED wall, truss y look de festival", en: "Outdoor stage with LED wall, truss and festival look" },
   },
   {
-    src: "/images/lighting-05.png",
+    src: "/images/lighting-03.png",
     tag: { es: "LED Pixel", en: "LED Pixel" },
-    caption: { es: "Instalación LED pixel bar — detalle de ingeniería", en: "LED pixel bar install — engineering detail" },
+    caption: { es: "Detalle de instalación LED pixel bar e ingeniería de data/power", en: "LED pixel bar install detail — data/power engineering" },
   },
   {
-    src: "/images/lighting-04.jpg",
+    src: "/images/lighting-04.png",
     tag: { es: "Live look", en: "Live look" },
-    caption: { es: "Look en vivo: cabina y lavado azul-verde", en: "Live look: booth with blue-green wash" },
+    caption: { es: "Look en vivo desde cabina: wash azul-verde y haze", en: "Live booth look: blue-green wash and haze" },
   },
 ] as const;
 
