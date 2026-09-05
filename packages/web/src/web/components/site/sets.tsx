@@ -20,14 +20,18 @@ export function Sets() {
         <SectionHead kicker={t.sets.kicker} title={t.sets.title} note={t.sets.note} />
 
         <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr]">
-          <div ref={scRef} className="reveal border border-line bg-bg-elev p-3">
+          <div
+            ref={scRef}
+            className="soundcloud-dark reveal overflow-hidden border border-line bg-bg p-0"
+          >
             <iframe
               title="FerchX en SoundCloud"
               width="100%"
               height="420"
               allow="autoplay"
               loading="lazy"
-              src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fferchx0408&color=%2300e58c&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false"
+              className="block w-full border-0 bg-bg"
+              src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fferchx0408&color=%2300e58c&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&show_artwork=true&visual=false"
             />
           </div>
 

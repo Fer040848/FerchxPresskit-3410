@@ -209,3 +209,12 @@
     transform: none;
   }
 }
+
+/* SoundCloud classic widget is light — invert to match dark press kit */
+.soundcloud-dark {
+  background: #07080a;
+}
+.soundcloud-dark iframe {
+  background: #07080a;
+  filter: invert(1) hue-rotate(180deg);
+}
