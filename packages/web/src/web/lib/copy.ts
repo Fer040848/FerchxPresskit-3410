@@ -236,6 +236,33 @@ export const VIDEOS = [
   },
 ] as const;
 
+export const LIGHTING_SERVICES = [
+  {
+    id: "led",
+    src: "/images/service-led-mapping.png",
+    title: {
+      es: "Diseño e instalación LED / pixel mapping",
+      en: "LED design & pixel-mapping installs",
+    },
+  },
+  {
+    id: "live",
+    src: "/images/service-light-jockey.png",
+    title: {
+      es: "Operación en vivo · light jockey · laser VJ",
+      en: "Live operation · light jockey · laser VJ",
+    },
+  },
+  {
+    id: "stage",
+    src: "/images/service-stage-mgmt.png",
+    title: {
+      es: "Stage management y coordinación técnica",
+      en: "Stage management and technical coordination",
+    },
+  },
+] as const;
+
 export const MARQUEE = [
   "TECH HOUSE",
   "MELODIC HOUSE",
@@ -267,8 +294,8 @@ export type Copy = {
     expertiseLabel: string;
     galleryLabel: string;
     galleryHint: string;
+    servicesLabel: string;
     paragraphs: string[];
-    services: string[];
   };
   hero: {
     tag: string;
@@ -351,11 +378,7 @@ const es: Copy = {
       "Más de una década como stage manager, light jockey, técnico de reparación y puente de music business: del rider al power distro, del ensayo al cue final. Perfil listo para festivales, marcas y producciones que necesitan un experto que entiende talento, crew y venue.",
       "Presenta propuestas dignas de escenario grande — instalación, operación en vivo y soporte técnico — con criterio de ingeniería y sensibilidad de artista.",
     ],
-    services: [
-      "Diseño e instalación LED / pixel mapping",
-      "Operación en vivo · light jockey · laser VJ",
-      "Stage management y coordinación técnica",
-    ],
+    servicesLabel: "Servicios para shows y festivales",
   },
   gallery: {
     kicker: "05 — Archivo",
@@ -470,11 +493,7 @@ const en: Copy = {
       "Over a decade as stage manager, light jockey, repair technician and music-business bridge: from rider to power distro, from rehearsal to final cue. A profile built for festivals, brands and productions that need someone who understands talent, crew and venue.",
       "He delivers stage-ready proposals — install, live operation and technical support — with engineering rigor and an artist's eye.",
     ],
-    services: [
-      "LED design & pixel-mapping installs",
-      "Live operation · light jockey · laser VJ",
-      "Stage management and technical coordination",
-    ],
+    servicesLabel: "Services for shows and festivals",
   },
   gallery: {
     kicker: "05 — Archive",

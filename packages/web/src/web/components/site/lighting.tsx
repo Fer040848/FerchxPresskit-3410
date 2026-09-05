@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useReveal } from "../../hooks/use-reveal";
-import { LIGHTING_GALLERY, LIGHTING_EXPERTISE } from "../../lib/copy";
+import { LIGHTING_GALLERY, LIGHTING_EXPERTISE, LIGHTING_SERVICES } from "../../lib/copy";
 import { useLang } from "./lang-context";
 import { SectionHead } from "./section-head";
 
@@ -106,12 +106,29 @@ export function Lighting() {
           ))}
         </div>
 
-        <div className="mt-12 grid gap-3 md:grid-cols-3">
-          {t.lighting.services.map((svc, i) => (
-            <div key={svc} className="border border-line bg-bg-elev p-5">
-              <span className="kicker text-accent">{String(i + 1).padStart(2, "0")}</span>
-              <p className="mt-3 font-display text-xl leading-tight">{svc}</p>
-            </div>
+        <p className="kicker mb-4 mt-12 text-accent">{t.lighting.servicesLabel}</p>
+        <div className="grid gap-3 md:grid-cols-3">
+          {LIGHTING_SERVICES.map((svc, i) => (
+            <article
+              key={svc.id}
+              className="group overflow-hidden border border-line bg-bg-elev"
+            >
+              <div className="relative aspect-[4/3] overflow-hidden border-b border-line">
+                <img
+                  src={svc.src}
+                  alt={svc.title[lang]}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-bg/70 via-transparent to-transparent" />
+                <span className="kicker absolute left-4 top-4 text-accent">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+              </div>
+              <div className="p-5">
+                <p className="font-display text-xl leading-tight">{svc.title[lang]}</p>
+              </div>
+            </article>
           ))}
         </div>
       </div>
