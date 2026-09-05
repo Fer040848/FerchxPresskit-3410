@@ -1,8 +1,8 @@
 {
   "id": "website",
   "name": "FERCHX Press Kit",
-  "description": "Electronic press kit for DJ FerchX — tech house and melodic house from Saltillo, México.",
+  "description": "Electronic press kit for DJ FerchX \u2014 tech house and melodic house from Saltillo, M\u00e9xico.",
   "url": "https://ferchx.com",
-  "hostname": "localhost",
+  "hostname": "ferchx.com",
   "port": 4200
 }
