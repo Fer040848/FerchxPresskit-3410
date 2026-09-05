@@ -1,0 +1,211 @@
+export type Lang = "es" | "en";
+
+export const LINKS = {
+  soundcloud: "https://soundcloud.com/ferchx0408",
+  spotify: "https://open.spotify.com/intl-es/artist/19T7tmXoFdH1gSnazAaKkH",
+  spotifyEmbed: "https://open.spotify.com/embed/artist/19T7tmXoFdH1gSnazAaKkH?theme=0",
+  appleMusic: "https://music.apple.com/es/artist/ferchx/1821387743",
+  instagram: "https://www.instagram.com/ferchx_bhdp",
+  whatsapp: "https://wa.me/528445927862",
+  phoneLabel: "+52 844 592 7862",
+} as const;
+
+export const GALLERY = [
+  "/images/ferchx-01.jpg",
+  "/images/ferchx-02.jpg",
+  "/images/ferchx-03.jpg",
+] as const;
+
+export const MARQUEE = [
+  "TECH HOUSE",
+  "MELODIC HOUSE",
+  "STAGE MANAGER",
+  "LIGHT JOCKEY",
+  "LASER VJ",
+  "PRODUCTOR",
+  "SALTILLO MX",
+] as const;
+
+type Section = { kicker: string; title: string };
+
+export type Copy = {
+  nav: { sets: string; bio: string; gallery: string; rider: string; booking: string };
+  hero: {
+    tag: string;
+    genres: string;
+    city: string;
+    cta: string;
+    scroll: string;
+  };
+  sets: Section & { note: string; platforms: string };
+  bio: Section & { paragraphs: string[]; copyBtn: string; copied: string; roles: string[] };
+  gallery: Section & { note: string; download: string };
+  rider: Section & {
+    note: string;
+    rows: { label: string; value: string }[];
+    flexible: string;
+  };
+  booking: Section & {
+    line: string;
+    whatsapp: string;
+    instagram: string;
+    basedIn: string;
+  };
+  footer: { rights: string; builtWith: string };
+};
+
+const es: Copy = {
+  nav: {
+    sets: "Sets",
+    bio: "Bio",
+    gallery: "Galería",
+    rider: "Rider",
+    booking: "Booking",
+  },
+  hero: {
+    tag: "Press Kit",
+    genres: "TECH HOUSE · MELODIC HOUSE",
+    city: "SALTILLO, MÉXICO",
+    cta: "Escuchar",
+    scroll: "Scroll",
+  },
+  sets: {
+    kicker: "01 — Escucha",
+    title: "Sets",
+    note: "Selección en SoundCloud y catálogo en plataformas.",
+    platforms: "Plataformas",
+  },
+  bio: {
+    kicker: "02 — Quién es",
+    title: "Bio",
+    roles: ["DJ", "Productor", "Stage Manager", "Light Jockey", "Laser VJ"],
+    paragraphs: [
+      "FerchX es DJ y productor mexicano radicado en Saltillo. Su historia con la música electrónica empezó mucho antes de la cabina: montando escenarios, instalando y rentando equipo, dirigiendo la noche como stage manager, light jockey y laser VJ. Aprendió la escena desde adentro — cómo se construye una fiesta, cómo respira un cuarto y qué la sostiene hasta el final.",
+      "Por eso sus sets no son una simple selección de discos, sino experiencias multisensoriales. Tech house y melodic house como columna vertebral, con la lectura de pista de alguien que ha estado en los dos lados del escenario: el que arma la producción y el que la vive. Sus fiestas se volvieron referencia en la escena local, de esas que se cuentan entre los que estuvieron.",
+      "Durante años cargó una inquietud más profunda: la necesidad de forjar su propio legado sonoro. El tiempo postergó esas maquetas, pero hoy están saliendo. FerchX ya suena en Spotify, Apple Music y SoundCloud.",
+    ],
+    copyBtn: "Copiar esta bio",
+    copied: "Copiada ✓",
+  },
+  gallery: {
+    kicker: "03 — Archivo",
+    title: "Galería",
+    note: "Clic en cualquier foto para verla completa.",
+    download: "Descargar",
+  },
+  rider: {
+    kicker: "04 — Requerimientos",
+    title: "Rider técnico",
+    note: "Setup estándar. Todo es adaptable al venue.",
+    rows: [
+      { label: "Reproductores", value: "2× Pioneer CDJ-3000 o CDJ-3000X, enlazados por LAN" },
+      {
+        label: "Mezcladora",
+        value: "Pioneer DJM-V10-LF (preferido). Alternativas: DJM-A9 o DJM-900NXS2",
+      },
+      {
+        label: "Adicional",
+        value:
+          "Si es posible: 1× Pioneer RMX-1000 en el send/return de la mezcladora y un tercer CDJ-3000 / CDJ-3000X",
+      },
+      { label: "Monitoreo", value: "2 monitores de cabina con control de volumen independiente" },
+      { label: "Cabina", value: "Mesa firme a ~1.00 m de altura, mínimo 2 m de ancho" },
+      { label: "Energía", value: "4 contactos aterrizados 110 V dentro de la cabina" },
+      { label: "Iluminación", value: "Luz tenue en cabina; DMX disponible si hay show de luces" },
+      { label: "Extras", value: "2 botellas de agua, toalla y espacio para laptop" },
+      { label: "Lleva", value: "USB propios; control de iluminación y láser bajo solicitud" },
+    ],
+    flexible: "¿Tu venue tiene otro setup? Escríbeme y lo resolvemos.",
+  },
+  booking: {
+    kicker: "05 — Contacto",
+    title: "Booking",
+    line: "Fechas, festivales, producción de escenario y show de luces.",
+    whatsapp: "WhatsApp",
+    instagram: "Instagram",
+    basedIn: "Base en Saltillo, Coahuila — disponible para viajar.",
+  },
+  footer: {
+    rights: "Todos los derechos reservados.",
+    builtWith: "Press kit oficial",
+  },
+};
+
+const en: Copy = {
+  nav: {
+    sets: "Sets",
+    bio: "Bio",
+    gallery: "Gallery",
+    rider: "Rider",
+    booking: "Booking",
+  },
+  hero: {
+    tag: "Press Kit",
+    genres: "TECH HOUSE · MELODIC HOUSE",
+    city: "SALTILLO, MEXICO",
+    cta: "Listen",
+    scroll: "Scroll",
+  },
+  sets: {
+    kicker: "01 — Listen",
+    title: "Sets",
+    note: "Selected mixes on SoundCloud, full catalogue on streaming.",
+    platforms: "Platforms",
+  },
+  bio: {
+    kicker: "02 — Who he is",
+    title: "Bio",
+    roles: ["DJ", "Producer", "Stage Manager", "Light Jockey", "Laser VJ"],
+    paragraphs: [
+      "FerchX is a Mexican DJ and producer based in Saltillo. His story with electronic music started long before the booth: building stages, installing and renting gear, running the night as stage manager, light jockey and laser VJ. He learned the scene from the inside — how a party is built, how a room breathes, and what keeps it alive until the end.",
+      "That is why his sets are not just a record selection but multisensory experiences. Tech house and melodic house at the core, read through the eyes of someone who has been on both sides of the stage: the one who builds the production and the one who lives it. His parties became a reference in the local scene — the kind people who were there still talk about.",
+      "For years he carried a deeper restlessness: the need to forge his own sonic legacy. Time kept those demos on hold, but they are coming out now. FerchX is already on Spotify, Apple Music and SoundCloud.",
+    ],
+    copyBtn: "Copy this bio",
+    copied: "Copied ✓",
+  },
+  gallery: {
+    kicker: "03 — Archive",
+    title: "Gallery",
+    note: "Click any photo to open it full size.",
+    download: "Download",
+  },
+  rider: {
+    kicker: "04 — Requirements",
+    title: "Technical rider",
+    note: "Standard setup. Everything can be adapted to the venue.",
+    rows: [
+      { label: "Players", value: "2× Pioneer CDJ-3000 or CDJ-3000X, linked via LAN" },
+      {
+        label: "Mixer",
+        value: "Pioneer DJM-V10-LF (preferred). Alternatives: DJM-A9 or DJM-900NXS2",
+      },
+      {
+        label: "Add-on",
+        value:
+          "If possible: 1× Pioneer RMX-1000 on the mixer's send/return and a third CDJ-3000 / CDJ-3000X",
+      },
+      { label: "Monitoring", value: "2 booth monitors with independent volume control" },
+      { label: "Booth", value: "Solid table at ~1.00 m height, 2 m wide minimum" },
+      { label: "Power", value: "4 grounded 110 V outlets inside the booth" },
+      { label: "Lighting", value: "Dim booth light; DMX available if there is a light show" },
+      { label: "Extras", value: "2 bottles of water, a towel and space for a laptop" },
+      { label: "Brings", value: "Own USB drives; lighting and laser control on request" },
+    ],
+    flexible: "Different setup at your venue? Message me and we'll work it out.",
+  },
+  booking: {
+    kicker: "05 — Contact",
+    title: "Booking",
+    line: "Dates, festivals, stage production and light shows.",
+    whatsapp: "WhatsApp",
+    instagram: "Instagram",
+    basedIn: "Based in Saltillo, Coahuila — available to travel.",
+  },
+  footer: {
+    rights: "All rights reserved.",
+    builtWith: "Official press kit",
+  },
+};
+
+export const COPY: Record<Lang, Copy> = { es, en };
