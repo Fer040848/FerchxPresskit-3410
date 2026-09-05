@@ -1,19 +1,37 @@
-# App template
+# FERCHX — Press Kit
 
-Runable copies this Bun and Turborepo project into each new sandbox.
+Electronic press kit (EPK) bilingüe ES/EN para **FerchX**, DJ y productor de Saltillo, México.
+Tech house · melodic house. Sitio de una sola página: bio, sets, galería, rider y booking.
 
-The root package commands are the external contract:
+Dirección de diseño en [`design.md`](./design.md).
 
-- `bun run dev` starts the web app.
-- `bun run dev:desktop` and `bun run dev:mobile` start platform clients.
-- `bun run build` builds every package.
-- `bun run start` starts or restarts the production server.
-- `bun run stop` stops the production server.
-- `bun run lint` and `bun run typecheck` validate the project.
-- The `db:generate`, `db:migrate`, and `db:push` commands manage the database.
+## Requisitos
 
-Deployment tools depend on these command names. Their implementations may change, but the names must remain stable.
+- [Bun](https://bun.sh) 1.3+
 
-The web package owns the API, database, and shared web interface. The mobile package is an Expo client. The desktop package is an Electron shell around the web app. Services use the fixed ports defined in `__ports.cjs`, and the web health endpoint is `/api/health`.
+## Desarrollo
 
-Secrets belong in the root `.env` file. Browser values must use the `VITE_` prefix. Commands prefixed with `internal:` are for template maintenance.
+```bash
+bun install
+bun run dev
+```
+
+Abre el puerto definido en `__ports.cjs` (por defecto `4200`).
+
+## Build
+
+```bash
+bun run build:web
+```
+
+## Producción
+
+```bash
+bun run build:web
+bun run start   # pm2
+bun run stop
+```
+
+## Estructura
+
+- `packages/web` — app React + Vite + Hono (API + frontend)
