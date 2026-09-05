@@ -19,19 +19,24 @@ export const GALLERY = [
 
 export const LIGHTING_GALLERY = [
   {
-    src: "/images/lighting-01.jpg",
+    src: "/images/lighting-01.png",
+    tag: { es: "Stage / truss", en: "Stage / truss" },
+    caption: { es: "Iluminación de escenario y atmósfera de club", en: "Stage lighting and club atmosphere" },
+  },
+  {
+    src: "/images/lighting-02.png",
+    tag: { es: "Outdoor / festival", en: "Outdoor / festival" },
+    caption: { es: "Montaje outdoor — Barbol: fixtures, truss y look de escenario", en: "Outdoor build — Barbol: fixtures, truss and stage look" },
+  },
+  {
+    src: "/images/lighting-05.png",
     tag: { es: "LED Pixel", en: "LED Pixel" },
-    caption: { es: "Instalación LED pixel / mapping", en: "LED pixel / mapping install" },
+    caption: { es: "Instalación LED pixel bar — detalle de ingeniería", en: "LED pixel bar install — engineering detail" },
   },
   {
-    src: "/images/lighting-02.jpg",
-    tag: { es: "Stage look", en: "Stage look" },
-    caption: { es: "Diseño de look para escenario", en: "Stage look design" },
-  },
-  {
-    src: "/images/lighting-03.jpg",
-    tag: { es: "Interactive", en: "Interactive" },
-    caption: { es: "Luces interactivas y atmósfera", en: "Interactive lights & atmosphere" },
+    src: "/images/lighting-04.jpg",
+    tag: { es: "Live look", en: "Live look" },
+    caption: { es: "Look en vivo: cabina y lavado azul-verde", en: "Live look: booth with blue-green wash" },
   },
 ] as const;
 
